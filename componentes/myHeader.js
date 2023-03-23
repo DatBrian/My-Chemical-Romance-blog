@@ -16,7 +16,7 @@ export default {
         {
             name: "Danger days",
             href: "",
-        },
+        }
     ],
     listarTitle() {
         document.querySelector("#title").insertAdjacentHTML("beforeend", `<a class="blog-header-logo text-dark">${this.title}</a>`);
