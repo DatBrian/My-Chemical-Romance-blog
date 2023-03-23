@@ -18,7 +18,7 @@
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family: "My Chemical Romance2","Playfair Disp lay", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2.25rem;
 }
 
@@ -27,7 +27,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family: "My Chemical Romance2","Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
 }
 
 .display-4 {
@@ -114,9 +114,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
-/***************MyCss***********/
+/***MyCSS***/
 
-/***imgBanner***************/
+@font-face {
+  font-family: "My Chemical Romance";
+  src: url(../fonts/the_chemical_parade_by_ravenblackhardt_dx3pzr.ttf);
+}
+
+@font-face {
+  font-family: "My Chemical Romance2";
+  src: url(../fonts/my_chemical_romance.ttf);
+}
+
+/***imgBanner***/
 #bannerImg {
   background-position: center;
   background-size: cover;

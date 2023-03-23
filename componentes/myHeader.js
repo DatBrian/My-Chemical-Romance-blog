@@ -1,5 +1,5 @@
 export default {
-    title:"Maneskin",
+    title:"My Chemical Romance",
     albums: [
         {
             name: "2002",
