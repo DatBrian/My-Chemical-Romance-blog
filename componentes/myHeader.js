@@ -1,31 +1,39 @@
 export default {
     title:"My Chemical Romance",
-    albums: [
+    info: [
         {
-            name: "2002",
+            name: "Miembros",
             href: "",
         },
         {
-            name: "Three cheers for sweet revenge",
+            name: "Historia",
             href: "",
         },
         {
-            name: "The black parade",
+            name: "Estilo Musical",
             href: "",
         },
         {
-            name: "Danger days",
+            name: "Crítica",
+            href: "",
+        },
+        {
+            name: "Giras",
+            href: "",
+        },
+                {
+            name: "Premios",
             href: "",
         }
     ],
     listarTitle() {
         document.querySelector("#title").insertAdjacentHTML("beforeend", `<a class="blog-header-logo text-dark">${this.title}</a>`);
     },
-    listarAlbums() {
+    listarInfo() {
         let plantilla = "";
-        this.albums.forEach((val, id) => {
+        this.info.forEach((val, id) => {
             plantilla += `<a class="p-2 link-secondary" href="${val.href}">${val.name}</a>`
         });
-        document.querySelector("#albums").insertAdjacentHTML("beforeend",plantilla);
+        document.querySelector("#info").insertAdjacentHTML("beforeend",plantilla);
     }
 }
