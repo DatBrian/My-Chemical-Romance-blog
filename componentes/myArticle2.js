@@ -1,7 +1,7 @@
 export default {
     section2: [
         {
-            title: "Crítica",
+            title: "Opiniones divididas",
             subtitle1: "Seguidores",
             paragraph1: `My Chemical Romance fue alabada inicialmente como una banda underground (diferente a la mayoría). Estaba entre las primeras bandas que solo ofrecían su música a través de PureVolume y MySpace, redes sociales en donde MCR logró obtener sus primeros cien mil seguidores.
                         Sin embargo, la banda actualmente tiene muchísimos seguidores -mayormente jóvenes en todo el mundo, ayudada parcialmente por el sonido más popular y la gran aceptación y difusión de su segundo álbum, Three cheers for sweet revenge, y más aún tras la publicación de The Black Parade.
@@ -13,11 +13,11 @@ export default {
     showSection2() {
         this.section2.forEach((val, id) => {
             document.querySelector("#article").insertAdjacentHTML("beforeend", `
-            <h2 class="blog-post-title">${val.title}</h2>
-            <br>
-            <h3>${val.subtitle1}<h3>
+            <h2 class="blog-post-title mt-2" style="font-weight:500" id="OD">${val.title}</h2>
+            <br><br>
+            <h3 style="font-size:1.5rem">${val.subtitle1}<h3>
             <p>${val.paragraph1}</p>
-            <h3>${val.subtitle2}<h3>
+            <h3 style="font-size:1.5rem">${val.subtitle2}<h3>
             <p>${val.paragraph2}</p>
             `)
         })

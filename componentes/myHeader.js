@@ -1,29 +1,29 @@
 export default {
-    title:"My Chemical Romance",
+    title: "My Chemical Romance",
     info: [
         {
             name: "Miembros",
-            href: "",
+            href: "#miembros",
         },
         {
             name: "Historia",
-            href: "",
+            href: "#article",
         },
         {
             name: "Estilo Musical",
-            href: "",
+            href: "#article",
         },
         {
             name: "Crítica",
-            href: "",
+            href: "#OD",
         },
         {
-            name: "Giras",
-            href: "",
+            name: "Albums",
+            href: "#lista",
         },
-                {
+        {
             name: "Premios",
-            href: "",
+            href: "#table",
         }
     ],
     listarTitle() {
@@ -32,8 +32,8 @@ export default {
     listarInfo() {
         let plantilla = "";
         this.info.forEach((val, id) => {
-            plantilla += `<a class="p-2 link-secondary" href="${val.href}">${val.name}</a>`
+            plantilla += `<a class="p-2 link-secondary" href="${val.href}"  >${val.name}</a>`
         });
-        document.querySelector("#info").insertAdjacentHTML("beforeend",plantilla);
+        document.querySelector("#info").insertAdjacentHTML("beforeend", plantilla);
     }
 }

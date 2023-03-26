@@ -1,47 +1,24 @@
 export default {
     section: {
-        title: "Premios",
-        paragraph: "Durante su carrera, la banda My Chemical Romance ha sido galardonada con los siguientes premios:",
+        title: "Albums",
+        paragraph: "Álbumes de estudio principales:",
     },
     lista: [
         {
-            nombre: "MTV Video Music Awards Latinoamérica 2005",
+            nombre: "I brought you my bullets, you brought me your love",
+            href: "https://es.wikipedia.org/wiki/I_brought_you_my_bullets,_you_brought_me_your_love"
         },
         {
-            nombre: "mtvU Woodie Awards 2005",
+            nombre: "Three cheers for sweet revenge",
+            href: "https://es.wikipedia.org/wiki/Three_cheers_for_sweet_revenge"
         },
         {
-            nombre: "MTV Video Music Awards Latinoamérica 2006",
+            nombre: "The Black Parade",
+            href: "https://es.wikipedia.org/wiki/The_Black_Parade"
         },
         {
-            nombre: "Kerrang! Awards 2006",
-        },
-        {
-            nombre: "NME Awards 2007",
-        },
-        {
-            nombre: "MTV Video Music Awards Japan 2007: mejor video rock, por Welcome to the Black Parade",
-        },
-        {
-            nombre: "Myx Music Awards 2007: mejor video internacional, por Welcome to the Black Parade",
-        },
-        {
-            nombre: "Kerrang! Awards 2007: mejor banda internacional",
-        },
-        {
-            nombre: "NME Awards 2011: mejor banda internacional",
-        },
-        {
-            nombre: "NME Awards 2011: mejor video, por Na na na (na na na na na na na na na)",
-        },
-        {
-            nombre: "Kerrang! Awards 2011: mejor video, por Na na na (na na na na na na na na na)",
-        },
-        {
-            nombre: "Kerrang! Awards 2012: mejor banda internacional",
-        },
-        {
-            nombre: "MTV Video of the Century (2017): Welcome to the Black Parade como mejor video del siglo",
+            nombre: "Danger days: the true lives of the Fabulous Killjoys",
+            href: "https://es.wikipedia.org/wiki/Danger_days:_the_true_lives_of_the_Fabulous_Killjoys   "
         }
     ],
     showSection() {
@@ -54,7 +31,7 @@ export default {
         this.lista.forEach((val, id) => {
             document.querySelector("#lista").insertAdjacentHTML("beforeend", `
             <ul>
-            <li>${val.nombre}</li>
+            <li><a href="${val.href}" target="_blank">${val.nombre}</a></li>
             </ul>
             `)
         })

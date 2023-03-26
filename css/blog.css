@@ -52,6 +52,10 @@ h6 {
   z-index: 2;
   height: 2.75rem;
   overflow-y: hidden;
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  margin-left: -103px;
 }
 
 .nav-scroller .nav {
@@ -166,7 +170,8 @@ h6 {
 
 /***imgPost***/
 
-.responsiveImg {
+
+responsiveImg {
   width: 200px;
   height: 200px;
   object-fit: fill;
@@ -177,4 +182,39 @@ p {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+#texto1 {
+  display: block;
+}
+
+.texto h5 {
+  display: flex;
+  width: 397px;
+  height: 25px;
+  background-color: #3d3c3c96;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: center;
+  margin-left: -23px;
+
+}
+
+.texto a {
+  color: white;
+  text-decoration: none;
+}
+
+#aside {
+  margin-left: 116px;
+}
+
+
+#post {
+  margin-top: 25px;
+  margin-bottom: -234px;
+}
+
+#nav {
+  width: 678px;
 }

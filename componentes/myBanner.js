@@ -1,7 +1,7 @@
 export default {
-    image: "../img/bc1b019fa1a5c61bba5e59bb8df3eee5.jpg",
+    image: "../img/banner3.jpeg",
     tittle: "My Chemical Romance",
-    textLink:"Show More",
+    textLink: "Show More",
 
     showImg() {
         document.querySelector("#bannerImg").style.backgroundImage = `url(${this.image})     `

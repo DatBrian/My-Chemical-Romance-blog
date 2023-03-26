@@ -6,6 +6,7 @@ import myArticle1 from "./componentes/myArticle1.js";
 import myArticle2 from "./componentes/myArticle2.js";
 import myList from "./componentes/myList.js";
 import myTable from "./componentes/myTable.js";
+import myFooter from "./componentes/myFooter.js";
 
 //Header
 myHeader.listarInfo();
@@ -15,6 +16,7 @@ myHeader.listarTitle();
 myBanner.showImg();
 
 //Carrousel
+myCarrousel.showTitle();
 myCarrousel.showPost();
 
 //Aside
@@ -33,3 +35,6 @@ myList.showList();
 //Table
 myTable.showSection();
 myTable.showTable();
+
+//Footer
+myFooter.showFooter();

@@ -15,6 +15,7 @@ export default {
             <h2 class="blog-post-title">${val.title}</h2>
             <p>${val.paragrahp}</p>
             <br>
+            <br>
             `)
         })
     }

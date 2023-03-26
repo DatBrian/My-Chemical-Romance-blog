@@ -1,60 +1,63 @@
 export default {
-    title: "Miembros",
-    post: [
-        {
-            nombre: "Gerard Way",
-            paragraph: "Al momento de los atentados del 11 de septiembre de 2001 a las Torres Gemelas de Nueva York, Way trabajaba en una tienda de cómics cerca de la zona y presenció el desastre. Desde entonces sintió que estaba desperdiciando su vida y decidió hacer algo significativo con ella, formando la banda My Chemical Romance",
-            img: "/img/gerardway1.jpg",
-            btn: {
-                name: "Ver Más",
-                href: "https://es.wikipedia.org/wiki/Gerard_Way",
-            }
-        },
-        {
-            nombre: "Ray Toro",
-            paragraph: "Toro conoció al vocalista Gerard Way a través de Shawn Dillon, exlíder de The Rodneys (banda en la que solía tocar Toro), y acordó trabajar con este y Matt Pelissier en las sesiones de práctica de la banda en el ático de Pelissier.",
-            img: "/img/raytoro1.jpg",
-            btn: {
-                name: "Ver Más",
-                href: "https://es.wikipedia.org/wiki/Mikey_Way",
-            }
-        },
-        {
-            nombre: "Mikey Way",
-            paragraph: "Way se unió como bajista de la banda My Chemical Romance en 2001, junto con su hermano mayor Gerard, el baterista Matt Pelissier y el guitarrista Ray Toro. Sugirió el nombre de la banda tras ver el libro Ecstasy: Three Tales of Chemical Romance",
-            img: "/img/mikeyway1.jpg",
-            btn: {
-                name: "Ver Más",
-                href: "https://es.wikipedia.org/wiki/Ray_Toro",
-            }
-        },
-        {
-            nombre: "Frank Iero",
-            paragraph: "Iero estudiaba en la universidad y tocaba en la banda Pencey Prep; fue entonces cuando su banda tuvo que compartir el cuarto de grabaciones de la disquera Eyeball Records con My Chemical Romance. La banda Pencey Prep se separó y Frank se unió a My Chemical Romance.",
-            img: "/img/frankiero1.jpg",
-            btn: {
-                name: "Ver Más",
-                href: "https://es.wikipedia.org/wiki/Frank_Iero",
-            }
-        }
-    ],
-    showPost() {
-        this.post.forEach((val, id) => {
-            document.querySelector("#post").insertAdjacentHTML("beforeend", `
-            <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="cards">
-            <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">${val.nombre}</h3>
-            <p class="card-text mb-auto">${val.paragraph}</p>
-            <a href="${val.btn.href}" class="stretched-link">${val.btn.name}</a>
+  title: "Miembros",
+  showTitle() {
+    document.querySelector("#post").insertAdjacentHTML("beforebegin", `
+        <div id="miembros" class="title">
+        <h2 class="blog-post-title">${this.title}</h2>
+        </div>
+        `)
+  },
+  showPost() {
+    document.querySelector("#aside").insertAdjacentHTML("beforebegin", `
+              <div id="carouselExampleCaptions" class="carousel slide">
+        <div  iv class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active item1">
+            <img id="img1" src="/img/gerardway1.jpg" class="d-block" style="width: 500px; height:500px">
+            <div id="texto" class=" carousel-caption texto">
+              <h5><a href="https://es.wikipedia.org/wiki/Gerard_Way" target="_blank">Gerard Way</a></h5>
             </div>
-            <div class="col-auto d-none d-lg-block">
-            <img src="${val.img}" class="responsiveImg"
+          </div>
+          <div class="carousel-item">
+            <img src="/img/raytoro1.jpg" class="d-block" style="width: 500px; height:500px;">
+            <div class="carousel-caption d-none d-md-block texto">
+              <h5><a href="https://es.wikipedia.org/wiki/Ray_Toro" target="_blank">Ray Toro</a></h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/img/mikeyway1.jpg" class="d-block" style="width: 500px; height:500px;">
+            <div class="carousel-caption d-none d-md-block texto">
+              <h5><a href="https://es.wikipedia.org/wiki/Mikey_Way" target="_blank">Mikey Way</a></h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/img/frankiero1.jpg" class="d-block" style="width: 500px; height: 500px;">
+            <div class="carousel-caption d-none d-md-block texto">
+              <h5><a href="https://es.wikipedia.org/wiki/Frank_Iero" target="_blank">Frank Iero</a></h5>
+            </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-            `)
-        })
-    }
-}
 
+        `)
+  }
+}
