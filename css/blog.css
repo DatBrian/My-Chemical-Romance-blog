@@ -184,14 +184,18 @@ p {
   line-height: 1.5;
 }
 
+.carousel {
+  margin-bottom: 451px;
+}
+
 #texto1 {
   display: block;
 }
 
 .texto h5 {
   display: flex;
+  height: 30px;
   width: 397px;
-  height: 25px;
   background-color: #3d3c3c96;
   align-items: flex-end;
   align-content: center;
@@ -212,9 +216,28 @@ p {
 
 #post {
   margin-top: 25px;
-  margin-bottom: -234px;
+  margin-bottom: -460px;
 }
 
 #nav {
   width: 678px;
+}
+
+a {
+  text-decoration: none;
+  color: #727272;
+  line-height: 30px;
+}
+
+a:hover {
+  color: black;
+
+}
+
+#info a:hover {
+  color: black;
+}
+
+.nombreMiembros {
+  line-height: normal;
 }
