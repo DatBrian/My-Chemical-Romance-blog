@@ -1,11 +1,15 @@
 export default {
   title: "Miembros",
   showTitle() {
-    document.querySelector("#post").insertAdjacentHTML("beforebegin", `
-        <div id="miembros" class="title">
-        <h2 class="blog-post-title">${this.title}</h2>
-        </div>
-        `)
+    const ws = new Worker("storage/wsMyCarousel.js", { type: "module" });
+
+    ws.postMessage({ module: "listTitle", data: this.title });
+
+    ws.addEventListener("message", (e) => {
+      let doc = new DOMParser().parseFromString(e.data, "text/html");
+      document.querySelector("#post").insertAdjacentElement("beforebegin", ...doc.body.children);
+      ws.terminate();
+    })
   },
   showPost() {
     document.querySelector("#aside").insertAdjacentHTML("beforebegin", `

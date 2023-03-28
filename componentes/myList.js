@@ -21,20 +21,35 @@ export default {
             href: "https://es.wikipedia.org/wiki/Danger_days:_the_true_lives_of_the_Fabulous_Killjoys   "
         }
     ],
-    showSection() {
-        document.querySelector("#lista").insertAdjacentHTML("beforeend", `
-        <h2 class="blog-post-title">${this.section.title}</h2>
-        <p>${this.section.paragraph}</p>
-        `)
-    },
-    showList() {
-        this.lista.forEach((val, id) => {
-            document.querySelector("#lista").insertAdjacentHTML("beforeend", `
-            <ul>
-            <li><a href="${val.href}" target="_blank">${val.nombre}</a></li>
-            </ul>
-            `)
+    show() {
+        const ws = new Worker("storage/wsMyList.js", { type: "module" });
+
+        let id = [];
+        let count = 0;
+
+        ws.postMessage({ module: "showSection", data: this.section });
+        ws.postMessage({ module: "showList", data: this.lista });
+        id = ["#lista", "#lista"]
+
+        ws.addEventListener("message", (e) => {
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+            document.querySelector(id[count]).append(...doc.body.children);
+            (id, length - 1 === count) ? ws.terminate() : count++;
         })
+
     }
 
 }
+// document.querySelector("#lista").insertAdjacentHTML("beforeend", `
+//         <h2 class="blog-post-title">${this.section.title}</h2>
+//         <p>${this.section.paragraph}</p>
+//         `)
+//     },
+// showList() {
+//     this.lista.forEach((val, id) => {
+//         document.querySelector("#lista").insertAdjacentHTML("beforeend", `
+//             <ul>
+//             <li><a href="${val.href}" target="_blank">${val.nombre}</a></li>
+//             </ul>
+//             `)
+//     })

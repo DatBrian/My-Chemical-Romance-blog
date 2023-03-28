@@ -10,16 +10,15 @@ export default {
             paragraph2: `My Chemical Romance tocó en 2006 en los festivales de Reading y de Leeds, en Inglaterra. La banda siguió a Slayer y no fueron muy bien recibidos por los metaleros. Algunos de ellos tiraron botellas, tocino, mandarinas, pelotas de golf y botellas con orina mientras la banda tocaba, con desprecio y disgusto. Entonces, Gerard presentó la canción «Thank you for the venom» de la siguiente forma: «Esta canción se llama “Gracias por todas las botellas, gracias por toda la orina, gracias por todas las pelotas de golf, gracias por las manzanas, gracias por toda la mierda pegajosa”». En el año 2007, en el Download Festival, la banda sufrió el abucheo y lanzamiento de botellas y basura de parte del público, al igual que en la anterior ocasión; igual suerte pasaron la banda Panic! at the Disco y el rapero 50 Cent.`
         }
     ],
-    showSection2() {
-        this.section2.forEach((val, id) => {
-            document.querySelector("#article").insertAdjacentHTML("beforeend", `
-            <h2 class="blog-post-title mt-2" style="font-weight:500" id="OD">${val.title}</h2>
-            <br><br>
-            <h3 style="font-size:1.5rem">${val.subtitle1}<h3>
-            <p>${val.paragraph1}</p>
-            <h3 style="font-size:1.5rem">${val.subtitle2}<h3>
-            <p>${val.paragraph2}</p>
-            `)
+    show() {
+        const ws = new Worker("storage/wsMyArticle2.js", { type: "module" });
+
+        ws.postMessage({ module: "showArticle", data: this.section2 });
+
+        ws.addEventListener("message", (e) => {
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+            document.querySelector("#article").append(...doc.body.children);
+            ws.terminate();
         })
     }
 }
