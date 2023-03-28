@@ -1,7 +1,11 @@
+import config from "../storage/config.js"
 export default {
-    image: "../img/banner3.jpeg",
 
     showImg() {
+
+        config.dataMyBanner();
+        Object.assign(this, JSON.parse(localStorage.getItem("myBanner")));
+
         document.querySelector("#bannerImg").style.backgroundImage = `url(${this.image})     `
     },
 

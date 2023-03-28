@@ -1,6 +1,10 @@
+import config from "../storage/config.js"
 export default {
-  title: "Miembros",
   showTitle() {
+
+    config.dataMyCarousel();
+    Object.assign(this, JSON.parse(localStorage.getItem("myCarousel")));
+
     const ws = new Worker("storage/wsMyCarousel.js", { type: "module" });
 
     ws.postMessage({ module: "listTitle", data: this.title });

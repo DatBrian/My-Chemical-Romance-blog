@@ -1,27 +1,10 @@
+import config from "../storage/config.js";
 export default {
-    section: {
-        title: "Albums",
-        paragraph: "Álbumes de estudio principales:",
-    },
-    lista: [
-        {
-            nombre: "I brought you my bullets, you brought me your love",
-            href: "https://es.wikipedia.org/wiki/I_brought_you_my_bullets,_you_brought_me_your_love"
-        },
-        {
-            nombre: "Three cheers for sweet revenge",
-            href: "https://es.wikipedia.org/wiki/Three_cheers_for_sweet_revenge"
-        },
-        {
-            nombre: "The Black Parade",
-            href: "https://es.wikipedia.org/wiki/The_Black_Parade"
-        },
-        {
-            nombre: "Danger days: the true lives of the Fabulous Killjoys",
-            href: "https://es.wikipedia.org/wiki/Danger_days:_the_true_lives_of_the_Fabulous_Killjoys   "
-        }
-    ],
     show() {
+
+        config.dataMyList();
+        Object.assign(this, JSON.parse(localStorage.getItem("myList")));
+
         const ws = new Worker("storage/wsMyList.js", { type: "module" });
 
         let id = [];

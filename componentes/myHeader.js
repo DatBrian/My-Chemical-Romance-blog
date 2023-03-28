@@ -1,32 +1,10 @@
+import config from "../storage/config.js";
 export default {
-    title: "My Chemical Romance",
-    info: [
-        {
-            name: "Miembros",
-            href: "#miembros",
-        },
-        {
-            name: "Historia",
-            href: "#article",
-        },
-        {
-            name: "Estilo Musical",
-            href: "#article",
-        },
-        {
-            name: "Crítica",
-            href: "#OD",
-        },
-        {
-            name: "Albums",
-            href: "#lista",
-        },
-        {
-            name: "Premios",
-            href: "#table",
-        }
-    ],
     show() {
+
+        config.dataMyHeader();
+        Object.assign(this, JSON.parse(localStorage.getItem("myHeader")));
+
         const ws = new Worker("storage/wsMyHeader.js", { type: "module" });
 
         let id = [];

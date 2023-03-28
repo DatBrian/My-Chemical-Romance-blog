@@ -1,13 +1,10 @@
+import config from "../storage/config.js";
 export default {
-    footer: {
-        tool: "Bootstrap",
-        linkTool: "https://getbootstrap.com/",
-        autor1: "@DatBrian",
-        linkAutor1: "https://github.com/DatBrian",
-        autor2: "@rooh_ayko3.0",
-        linkAutor2: "https://www.instagram.com/rooh_ayko3.0/"
-    },
     show() {
+
+        config.dataMyFooter();
+        Object.assign(this, JSON.parse(localStorage.getItem("myFooter")));
+
         const ws = new Worker("storage/wsmyFooter.js", { type: "module" });
 
         ws.postMessage({ module: "showFooter", data: this.footer });
