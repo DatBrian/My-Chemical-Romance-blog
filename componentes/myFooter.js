@@ -5,14 +5,15 @@ export default {
         config.dataMyFooter();
         Object.assign(this, JSON.parse(localStorage.getItem("myFooter")));
 
-        const ws = new Worker("storage/wsmyFooter.js", { type: "module" });
+        const ws = new Worker("storage/wsMyFooter.js", { type: "module" });
 
         ws.postMessage({ module: "showFooter", data: this.footer });
 
         ws.addEventListener("message", (e) => {
             let doc = new DOMParser().parseFromString(e.data, "text/html");
+            console.log(doc);
             document.querySelector("#footer").append(...doc.body.children);
-            ws.terminate();
+
         })
     }
 }
